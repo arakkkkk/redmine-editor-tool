@@ -1,8 +1,8 @@
 {
   "manifest_version": 3,
-  "name": "Side panel extension",
+  "name": "Redmine Editor Tool",
   "version": "1.0",
-  "description": "Extension with a default side panel.",
+  "description": "A chrome extension to support editing with textiles in Redmine.",
   "icons": {
     "16": "images/icon.png",
     "48": "images/icon.png",
