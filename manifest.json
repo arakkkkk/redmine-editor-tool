@@ -1,0 +1,25 @@
+{
+  "manifest_version": 3,
+  "name": "Side panel extension",
+  "version": "1.0",
+  "description": "Extension with a default side panel.",
+  "icons": {
+    "16": "images/icon.png",
+    "48": "images/icon.png",
+    "128": "images/icon.png"
+  },
+
+  "permissions": ["activeTab", "tabs"],
+
+  "content_scripts": [
+    {
+      "matches": ["http://*/*", "https://*/*"],
+      "css": ["src/my-styles.css"],
+      "js": ["lib/parser.js", "src/content-script.js"]
+    }
+  ],
+
+  "action": {
+    "default_popup": "src/popup/popup.html"
+  }
+}
