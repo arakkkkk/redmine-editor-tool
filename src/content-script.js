@@ -51,7 +51,7 @@ window.onload = () => {
         window.getComputedStyle($editor).lineHeight,
       );
       const scrollTop =
-        (line_y_height + 3) * lineHeight - $editor.clientHeight / 2;
+        (line_y_height + 5) * lineHeight - $editor.clientHeight / 2;
       $editor.scrollTop = scrollTop;
     }
 
