@@ -4,8 +4,11 @@ const createOutlineElem = (outlines, current_node = 0) => {
     let o = outlines[i];
     if (o.head == current_node) {
       let $li = document.createElement("li");
-      $li.innerText = o.text;
-      $li.setAttribute("outlineKey", o.id);
+      let $a = document.createElement("a");
+      $a.innerText = o.text;
+      $a.setAttribute("outlineKey", o.id);
+      $a.setAttribute("href", "#");
+      $li.appendChild($a);
       $ul.appendChild($li);
       $childs = createOutlineElem(outlines.slice(i + 1), o.id);
       $ul.appendChild($childs);
@@ -29,14 +32,15 @@ const showOutline = () => {
       }
       var links = $elOutline.getElementsByTagName("li");
       for (var i = 0; i < links.length; i++) {
+        let $a = links[i].querySelector("a");
         let o;
-        for (let oo of outline) {
-          if (oo.id == links[i].getAttribute("outlineKey")) {
-            o = oo;
+        for (o of outline) {
+          if (o.id == $a.getAttribute("outlineKey")) {
             break;
           }
         }
-        links[i].onclick = function (e) {
+        $a.onclick = function (e) {
+          e.preventDefault();
           chrome.tabs.sendMessage(tab.id, { msg: "jumpTo", line: o });
         };
       }
