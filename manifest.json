@@ -9,15 +9,16 @@
     "128": "images/icon.png"
   },
 
-  "permissions": ["activeTab"],
+  "permissions": ["activeTab", "storage"],
 
   "content_scripts": [
     {
       "matches": ["http://*/*", "https://*/*"],
-      "css": ["src/my-styles.css"],
       "js": ["lib/parser.js", "src/content-script.js"]
     }
   ],
+
+  "options_page": "src/options/options.html",
 
   "action": {
     "default_popup": "src/popup/popup.html"

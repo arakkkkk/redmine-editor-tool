@@ -1,3 +1,7 @@
+document.getElementById("openOptions").addEventListener("click", () => {
+  chrome.runtime.openOptionsPage();
+});
+
 const createOutlineElem = (outlines, current_node = 0) => {
   let $ul = document.createElement("ul");
   for (let i = 0; i < outlines.length; i++) {
