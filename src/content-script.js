@@ -1,8 +1,10 @@
 window.onload = () => {
   chrome.storage.sync.get("redmineURL", (data) => {
     const redmineURL = data.redmineURL;
-    console.log(redmineURL);
-    if (!redmineURL) {
+    const patternRegex = new RegExp(
+      "^" + redmineURL.replace(/\*/g, ".*") + "$",
+    );
+    if (!location.href.match(patternRegex)) {
       return;
     }
     const isIssuePage = document.URL.match(/\/issues\//g) != null;

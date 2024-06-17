@@ -1,5 +1,3 @@
-WIP
-
 # Redmine Editor Tool
 
 A chrome extension to support editing with textiles in Redmine.
@@ -14,4 +12,5 @@ A chrome extension to support editing with textiles in Redmine.
 - [x] wiki outline popup
 - [x] tichet outline popupfuture supportfuture support
 - [ ] bug fix
+- [ ] Publish for chrome/edge extension
 

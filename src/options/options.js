@@ -1,6 +1,5 @@
 document.getElementById("saveButton").addEventListener("click", () => {
   const url = document.getElementById("urlInput").value;
-  url.replace(/\/$/g, "");
   chrome.storage.sync.set({ redmineURL: url }, () => {
     console.log("URL is set to " + url);
     alert("URL is set to " + url);
